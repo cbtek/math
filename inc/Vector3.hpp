@@ -4,17 +4,15 @@
 //#
 //#-------------------------------------------------
 
-#ifndef CM_VECTOR3
-#define CM_VECTOR3
+#pragma once
 
 #include <string>
 #include <cmath>
 #include <iostream>
 #include <iomanip>
 
-
-namespace common{
-namespace utility{
+namespace cbtek {
+namespace common {
 namespace math{
 
 template<typename T>
@@ -247,5 +245,5 @@ Vector3<T> Vector3<T>::getNormalized()
 typedef Vector3<float> Vector3f;
 typedef Vector3<double> Vector3d;
 typedef Vector3<int> Vector3i;
+
 }}} //namespace
-#endif //VECTOR3

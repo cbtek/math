@@ -1,6 +1,6 @@
 #include "Motion3f.h"
-namespace common{
-namespace utility{
+namespace cbtek {
+namespace common {
 namespace math{
 
 Motion3f::Motion3f(const float &x, const float &y, const float &z)

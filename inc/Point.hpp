@@ -4,36 +4,40 @@
 #include <string>
 #include <sstream>
 #include <cmath>
-#include <ObjectList.h>
-namespace common{
-namespace utility{
+
+#include "utility/inc/ObjectList.hpp"
+
+namespace cbtek {
+namespace common {
 namespace math{
 template <typename T>
 class Point
 {
 public:
 
-    Point(const T & x=0, const T & y=0);
+    Point(T x=0, T y=0);
 
-    void set(const T & x, const T & y);
+    void set(T x, T y);
 
-    const T & getX() const;
+    void setPosition(T x, T y);
 
-    const T & getY() const;
+    T getX() const;
 
-    void setX(const T &x);
+    T getY() const;
 
-    void setY(const T &y);
+    void setX(T x);
+
+    void setY(T y);
 
     const std::string toString();
 
-    void rotate(const size_t & degree, const size_t &originX=0, const size_t &originY=0);
+    void rotate(T degree, T originX = 0, T originY = 0);
 
-    void move(const T & angle, const T & radius, const T & velX=0,const T & velY=0);
+    void move(T angle, T radius, T velX=0,T velY=0);
 
-    void incrementX(const T & dx);
+    void incrementX(T dx);
 
-    void incrementY(const T & dy);
+    void incrementY(T dy);
 private:
 
     T m_x,m_y;
@@ -43,37 +47,44 @@ private:
 };
 
 template <typename T>
-Point<T>::Point(const T & x, const T & y)
+Point<T>::Point(T x, T y)
 {
     this->m_x=x;this->m_y=y;
 }
 
 template <typename T>
-void Point<T>::set(const T &x, const T &y)
+void Point<T>::set(T x, T y)
 {
     this->m_x=x;this->m_y=y;
 }
 
+template<typename T>
+void Point<T>::setPosition(T x, T y)
+{
+    this->m_x = x;
+    this->m_y = y;
+}
+
 template <typename T>
-const T &Point<T>::getX() const
+T Point<T>::getX() const
 {
     return this->m_x;
 }
 
 template <typename T>
-const T &Point<T>::getY() const
+T Point<T>::getY() const
 {
     return this->m_y;
 }
 
 template <typename T>
-void Point<T>::setX(const T &x)
+void Point<T>::setX(T x)
 {
     this->m_x=x;
 }
 
 template <typename T>
-void Point<T>::setY(const T &y)
+void Point<T>::setY(T y)
 {
     this->m_y=y;
 }
@@ -87,7 +98,7 @@ const std::string Point<T>::toString()
 }
 
 template <typename T>
-void Point<T>::rotate(const size_t &degree,const size_t & originX,const size_t & originY)
+void Point<T>::rotate(T degree,T originX,T originY)
 {
     if (degree<360)
     {
@@ -101,7 +112,7 @@ void Point<T>::rotate(const size_t &degree,const size_t & originX,const size_t &
 }
 
 template <typename T>
-void Point<T>::move(const T &angle, const T &radius, const T &velX, const T &velY)
+void Point<T>::move(T angle, T radius, T velX, T velY)
 {
     T degree=angle;
     if (angle>360)
@@ -121,13 +132,13 @@ void Point<T>::move(const T &angle, const T &radius, const T &velX, const T &vel
 }
 
 template <typename T>
-void Point<T>::incrementX(const T &dx)
+void Point<T>::incrementX(T dx)
 {
     m_x+=dx;
 }
 
 template <typename T>
-void Point<T>::incrementY(const T &dy)
+void Point<T>::incrementY(T dy)
 {
     m_y+=dy;
 }

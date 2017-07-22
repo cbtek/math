@@ -3,11 +3,11 @@
      Detailed description for Size
 */
 
-#ifndef TXWI_SIZE_EVKW
-#define TXWI_SIZE_EVKW
+#pragma once
+
 #include <cinttypes>
+namespace cbtek {
 namespace common {
-namespace utility {
 namespace math{
 
 template<typename T>
@@ -80,6 +80,3 @@ typedef Size<std::int64_t> Size2i;
 typedef Size<double>Size2d;
 typedef Size<float>Size2f;
 }}}//end namespace
-
-#endif
-

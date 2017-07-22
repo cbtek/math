@@ -2,8 +2,8 @@
 #include <sstream>
 #include <iostream>
 
-namespace common{
-namespace utility{
+namespace cbtek {
+namespace common {
 namespace math{
 
 
@@ -134,15 +134,15 @@ Matrix Matrix::operator *(const Matrix &matrix)
     return newMatrix;
 }
 
-common::utility::math::Vector3f Matrix::operator *(const common::utility::math::Vector3f & vec)
+Vector3f Matrix::operator *(const Vector3f & vec)
 {
     Matrix matrix(vec,this->rows());
     matrix=this->operator *(matrix);
     if (matrix.columns()>=3)
     {
-        return common::utility::math::Vector3f(matrix.getValue(0,0),matrix.getValue(0,1),matrix.getValue(0,2));
+        return Vector3f(matrix.getValue(0,0),matrix.getValue(0,1),matrix.getValue(0,2));
     }
-    return common::utility::math::Vector3f();
+    return Vector3f();
 }
 
 Matrix &Matrix::operator <<(const float &value)

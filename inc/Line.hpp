@@ -8,8 +8,8 @@
 #define CM_LINE
 
 
-namespace common{
-namespace utility{
+namespace cbtek {
+namespace common {
 namespace math{
 
 template <typename T>

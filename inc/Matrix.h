@@ -1,14 +1,15 @@
-#ifndef MATRIX_H
-#define MATRIX_H
+#pragma once
+
 #include <cstdlib>
-#include <Grid.h>
-#include <FloatList.h>
-#include <math/Vector3.h>
 #include <string>
 #include <cmath>
 
-namespace common{
-namespace utility{
+#include "utility/inc/ObjectList.hpp"
+#include "math/inc/Grid.hpp"
+#include "math/inc/Vector3.hpp"
+
+namespace cbtek {
+namespace common {
 namespace math{
 
 class Matrix
@@ -18,14 +19,14 @@ public:
     Matrix();
     Matrix(size_t rows, size_t columns);
     Matrix(const Matrix & matrix);
-    Matrix(const common::utility::math::Vector3f & vector, const size_t defaultRowSize=3);
+    Matrix(const Vector3f & vector, const size_t defaultRowSize=3);
     Matrix(size_t rows, size_t columns, const common::utility::Float64List & values);
     Matrix & operator=(const Matrix & matrix);
     Matrix operator+(const Matrix & matrix);
     Matrix operator-(const Matrix & matrix);
     Matrix operator*(const float & scalar);
     Matrix operator*(const Matrix & scalar);
-    common::utility::math::Vector3f operator*(const common::utility::math::Vector3f & vec);
+    Vector3f operator*(const Vector3f & vec);
     Matrix & operator<<(const float & value);
 
 
@@ -48,4 +49,3 @@ protected:
     common::utility::Grid<float> m_cells;
 };
 }}} //namespace
-#endif // MATRIX_H

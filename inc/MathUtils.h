@@ -1,14 +1,14 @@
-#ifndef CEM_MATH_H
-#define CEM_MATH_H
+#pragma once
 
-#include <math/Vector3.h>
-#include <math/Point.h>
+#include "math/inc/Vector3.hpp"
+#include "math/inc/Point.hpp"
+
+#include <limits>
 #include <cstdint>
 #include <cmath>
 
 namespace cbtek {
 namespace common {
-namespace utility {
 namespace math {
 
 namespace constants
@@ -41,7 +41,7 @@ public:
     static Vector3f nlerp(Vector3f start, Vector3f end, double percent);
     static Vector3f slerp(Vector3f start, Vector3f end, double percent);
     static Vector3f getSurfaceNormal(const Vector3f & v1, const Vector3f & v2);
-    static std::int32_t getNormalizedDegree(const std::int32_t & degree);
+    static std::int32_t getNormalizedDegree(double degree);
     static bool pointExistsInTriangle2i(const std::int32_t & srcX, const std::int32_t & srcY, const std::int32_t & x1, const std::int32_t & y1,const std::int32_t & x2, const std::int32_t & y2,const std::int32_t & x3, const std::int32_t & y3);
     static double sind(const std::int32_t & degree);
     static double cosd(const std::int32_t & degree);
@@ -59,7 +59,7 @@ public:
     static double PI_OVER_2();
 	static double clip(float n, float lower, float upper);
     static double distance(const double &x1, const double &y1, const double &x2, const double &y2);
-    static common::utility::math::Point<float> rotate2d(const double & x, const double & y, const double &ox, const double &oy, const int &angle);
+    static Point<float> rotate2d(const double & x, const double & y, const double &ox, const double &oy, const int &angle);
     static double getAngle(const double & x1, const double & y1, const double & x2, const double & y2);
 
     static double getUpdatedAngle(const double & currentAngle, const double & desiredAngle, const double & step);
@@ -85,8 +85,5 @@ public:
 
 private:
     MathUtils();
-
 };
-
 }}} //namespace
-#endif // MATH_H

@@ -1,9 +1,9 @@
-#ifndef MOTION3F_H
-#define MOTION3F_H
+#pragma once
 
-#include <math/Vector3.h>
-namespace common{
-namespace utility{
+#include "math/inc/Vector3.hpp"
+
+namespace cbtek {
+namespace common {
 namespace math{
 
 class Motion3f : public Vector3f
@@ -27,4 +27,3 @@ private:
     float m_speed;
 };
 }}} //namespace
-#endif // MOTION3F_H

@@ -1,11 +1,9 @@
-#include "MathUtils.h"
-#include <math/Point.h>
+#include "math/inc/MathUtils.h"
+#include "math/inc/Point.hpp"
 
-using namespace common::utility::math;
-
-namespace common{
-namespace utility{
-namespace math{
+namespace cbtek {
+namespace common {
+namespace math {
 
 Vector3f MathUtils::lerp(Vector3f start, Vector3f end, double percent)
 {
@@ -62,18 +60,18 @@ Vector3f MathUtils::getSurfaceNormal(const Vector3f &v1, const Vector3f &v2)
                     );
 }
 
-std::int32_t MathUtils::getNormalizedDegree(const std::int32_t &degree)
+std::int32_t MathUtils::getNormalizedDegree(double degree)
 {
-    if (degree>359)
+    if (std::roundf(degree) > 359.)
     {
-        return degree-360;
+        return degree - 360.;
     }
-    else if (degree<0)
+
+    else if (std::roundf(degree) <= 0.)
     {
-        return 360+degree;
+        return 359. + degree;
     }
     else return degree;
-
 }
 
 

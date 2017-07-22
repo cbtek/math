@@ -5,10 +5,9 @@
 //#-------------------------------------------------
 
 #include "Noise.h"
-#include <Random.h>
 
-namespace common{
-namespace utility{
+namespace cbtek {
+namespace common {
 namespace math{
 
 	

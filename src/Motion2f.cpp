@@ -1,7 +1,7 @@
 #include "Motion2f.h"
 
-namespace common{
-namespace utility{
+namespace cbtek {
+namespace common {
 namespace math{
 
 Motion2f::Motion2f(const float &x, const float &y, const float &speed, const float &heading, const Point<float> &velocity)

@@ -4,21 +4,24 @@
 //#
 //#-------------------------------------------------
 
-#ifndef CUMN_NOISE
-#define CUMN_NOISE
-#include <ctime>
-#include <FloatList.h>
-#include <Random.h>
+#pragma once
 
-namespace common{
-namespace utility{
+#include <ctime>
+#include "utility/inc/Random.h"
+
+namespace cbtek {
+namespace common {
 namespace math{
 
 class Noise
 {
 
 public:	
-	Noise(int octaves=6,double persistence=.25,double zoom=1.,int seed=time(NULL),bool cosinus=true);
+    Noise(int octaves=6,
+          double persistence=.25,
+          double zoom=1.,
+          int seed=time(NULL),
+          bool cosinus=true);
 	
 	double getNoise(int x);
 	double getNoise(int x, int y);
@@ -51,7 +54,5 @@ private:
 	int m_octaves;
 	bool m_cosinus;
 	double m_zoom;
-
 };
 }}} //namespace
-#endif //NOISE

@@ -1,10 +1,9 @@
-#ifndef MOTION2F_H
-#define MOTION2F_H
+#pragma once
 
-#include <math/Point.h>
+#include "math/inc/Point.hpp"
 
-namespace common{
-namespace utility{
+namespace cbtek {
+namespace common {
 namespace math{
 class Motion2f : public Point<float>
 {
@@ -35,4 +34,3 @@ private:
     Point<float> m_velocity;
 };
 }}} //namespace
-#endif // MOTION2F_H
