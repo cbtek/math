@@ -7,12 +7,11 @@
 #pragma once
 
 #include <ctime>
+
+#include "MathCommon.hpp"
 #include "utility/inc/Random.h"
 
-namespace cbtek {
-namespace common {
-namespace math{
-
+BEGIN_NAMESPACE_CBTEK_COMMON_MATH
 class Noise
 {
 
@@ -55,4 +54,4 @@ private:
 	bool m_cosinus;
 	double m_zoom;
 };
-}}} //namespace
+END_NAMESPACE_CBTEK_COMMON_MATH
