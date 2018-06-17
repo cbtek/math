@@ -7,7 +7,6 @@ set(CURR_TARGET ${CBTEK_MATH_LIBRARY})
 set(CURR_TARGET_SOURCES "${CURR_TARGET}_SOURCES")
 set(CURR_TARGET_HEADERS"${CURR_TARGET}_HEADERS")
 include_directories(inc)
-include(${CMAKE_MODULE_PATH}/flags.cmake)
 
 #==============================================================================
 # Include Source Files
