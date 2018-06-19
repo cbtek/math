@@ -6,10 +6,7 @@
 
 #include "Noise.h"
 
-namespace cbtek {
-namespace common {
-namespace math{
-
+BEGIN_NAMESPACE_CBTEK_COMMON_MATH
 	
 	//------------------------------------------PERMUTATION_TABLE---------------------------
 
@@ -532,4 +529,4 @@ double Noise::getSimplexNoise(double x, double y, double z, double w)
     return 27.0f * (n0 + n1 + n2 + n3 + n4); // TODO: The scale factor is preliminary!
   }
 //---------------------------------------------------------------------
-}}} //namespace
+END_NAMESPACE_CBTEK_COMMON_MATH

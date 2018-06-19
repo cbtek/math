@@ -1,15 +1,13 @@
-#ifndef POINT_H
-#define POINT_H
+#pragma once
 
 #include <string>
 #include <sstream>
 #include <cmath>
 
 #include "utility/inc/ObjectList.hpp"
+#include "MathCommon.hpp"
 
-namespace cbtek {
-namespace common {
-namespace math{
+BEGIN_NAMESPACE_CBTEK_COMMON_MATH
 template <typename T>
 class Point
 {
@@ -148,5 +146,4 @@ typedef Point<int> Point2i;
 
 typedef common::utility::ObjectList<Point2f> Point2fList;
 typedef common::utility::ObjectList<Point2i> Point2iList;
-}}} //namespace
-#endif // Point<float>_H
+END_NAMESPACE_CBTEK_COMMON_MATH
