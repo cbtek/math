@@ -40,7 +40,7 @@ SOFTWARE.
                                              namespace math {
 
 #define END_NAMESPACE_CBTEK_COMMON_MATH }}}
-#define USE_NAMESPACE_CBTEK_COMMON_MATH using namespace cbtek::common::math;
+#define USE_NAMESPACE_CBTEK_MATH using namespace cbtek::common::math;
 
 BEGIN_NAMESPACE_CBTEK_COMMON_MATH
 

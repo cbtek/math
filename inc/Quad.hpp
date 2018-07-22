@@ -574,11 +574,11 @@ Quad<T>& Quad<T>::alignVCenter(T totalAreaHeight)
     T halfArea = totalAreaHeight / 2;
     if (halfH > halfArea)
     {
-        setX(halfH - halfArea);
+        setY(halfH - halfArea);
     }
     else
     {
-        setX(halfArea - halfH);
+        setY(halfArea - halfH);
     }
     return (*this);
 }
