@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include <sstream>
 #include <string>
 #include <cmath>
 #include <iostream>
@@ -31,7 +32,11 @@ public:
     Vector3<T> & operator-=(const Vector3<T> & vec);
     Vector3<T> getCrossProduct(const Vector3<T> & vec);
     Vector3<T> getNormalized();
+    void addX(T value) { m_values[0] += value; }
+    void addY(T value) { m_values[1] += value; }
+    void addZ(T value) { m_values[2] += value; }
 
+    void reset() { m_values[0] = m_values[1] = m_values[2] = 0; }
     void set(const T & x=0, const T & y=0, const T & z=0);
     void setX(const T &x);
     void setY(const T &y);
@@ -44,7 +49,14 @@ public:
     void increment(const T & dx, const T & dy, const T & dz);
     void operator/=(const T & scalar);
 
-
+    std::string toString() const
+    {
+        std::ostringstream out;
+        out << "x: " << m_values[0] << std::endl;
+        out << "y: " << m_values[1] << std::endl;
+        out << "z: " << m_values[2] << std::endl;
+        return out.str();
+    }
 
     T getDotProduct(const Vector3<T> & vec) const;
     T getMagnitude();
