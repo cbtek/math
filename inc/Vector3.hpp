@@ -49,12 +49,14 @@ public:
     void increment(const T & dx, const T & dy, const T & dz);
     void operator/=(const T & scalar);
 
+    T max() const;
+    T min() const;
     std::string toString() const
     {
         std::ostringstream out;
-        out << "x: " << m_values[0] << std::endl;
-        out << "y: " << m_values[1] << std::endl;
-        out << "z: " << m_values[2] << std::endl;
+        out << "x: " << m_values[0] << ", ";
+        out << "y: " << m_values[1] << ", ";
+        out << "z: " << m_values[2];
         return out.str();
     }
 
@@ -181,6 +183,47 @@ void Vector3<T>::operator/=(const T & scalar)
         m_values[2]/=scalar;
     }
 }
+
+template<typename T>
+T Vector3<T>::max() const
+{
+    auto max = 0.0;
+    if (m_values[0] > m_values[1])
+    {
+        max = m_values[0];
+    }
+    else
+    {
+        max = m_values[1];
+    }
+
+    if (m_values[2] > max)
+    {
+        max = m_values[2];
+    }
+    return max;
+}
+
+template<typename T>
+T Vector3<T>::min() const
+{
+    auto min = 0.0;
+    if (m_values[0] < m_values[1])
+    {
+        min = m_values[0];
+    }
+    else
+    {
+        min = m_values[1];
+    }
+
+    if (m_values[2] < min)
+    {
+        min = m_values[2];
+    }
+    return min;
+}
+
 template<typename T>
 Vector3<T> &Vector3<T>::operator +=(const Vector3<T>&vec)
 {
